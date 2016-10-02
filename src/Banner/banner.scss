@@ -1,0 +1,19 @@
+@import '../style/mixins/shadow';
+
+.banner{
+  @include resetMP;
+  font-size: 1.2rem;
+  margin: $_margin 0 $_margin 0;
+  padding: $_padding;
+
+  position: relative;
+  width: $_banner-width;
+  min-height: $_banner-height;
+
+  &.shadow{
+    @include banner-shadow(12px, 11px, #676767);
+  }
+
+}
+
+

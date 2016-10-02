@@ -1,0 +1,40 @@
+@import '../style/mixins/shadow';
+@import '../style/mixins/transition';
+@import '../style/mixins/active-darken';
+@import '../style/mixins/hover-lighten';
+
+.box-btn{
+  @include box-shadow;
+  @include bezier(box-shadow 0.2s);
+  @include active-darken(rgba(0, 0, 0, 0.12));
+  @include hover-lighten(rgba(255, 255, 255, 0.09));
+  @include resetMP;
+  border: none;
+  border-radius: $_radius;
+  outline: none;
+  cursor: pointer;
+
+  font-size: 1.3rem;
+  font-weight: 100;
+  font-family: $helvetica;
+  text-align: center;
+
+  padding-left: 10px;
+  padding-right: 10px;
+
+  position: relative;
+  min-width: 80px;
+  height: 40px;
+  z-index: 1;
+  line-height: 40px;
+
+  .btn-text{
+    z-index: 10;
+  }
+
+}
+
+.my-test-btn{
+  background: $sc-pink-dark;
+  color: white;
+}
