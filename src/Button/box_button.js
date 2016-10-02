@@ -2,11 +2,13 @@ import React from 'react'
 
 const boxButton = (props) => {
 
+  const classNameProp = (props.className || '');
+
   const classNames = (
-    (props.className || '').indexOf('bg') > -1
-      ? (props.className || '')
-      : 'bg-white '+ (props.className || '')
-  );
+    classNameProp.indexOf('bg') > -1
+      ? classNameProp
+      : 'bg-white '+ classNameProp
+  ).trim();
 
   const style = { ...props.style,
     background: props.bgColor || '',

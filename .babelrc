@@ -1,0 +1,5 @@
+{
+  "moduleId": "solid-components",
+  "presets": ["stage-1", "react", "es2015"],
+  "plugins": ["add-module-exports"]
+}

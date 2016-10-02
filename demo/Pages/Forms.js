@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {BoxButton, Banner, Form, TextInput} from '../../src'
+import {BoxButton, Banner, Form, TextInput} from '../../build'
 
 const Forms = (props) => (
   <div>

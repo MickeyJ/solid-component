@@ -3,6 +3,7 @@ import {render} from 'react-dom'
 import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 
 import './demo.scss'
+import '../build/main.css'
 
 import Layout from './Layout'
 import Main from './Pages/Main'

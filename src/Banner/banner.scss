@@ -2,13 +2,12 @@
 
 .banner{
   @include resetMP;
-  font-size: 1.2rem;
   margin: $_margin 0 $_margin 0;
   padding: $_padding;
 
   position: relative;
   width: $_banner-width;
-  //min-height: $_banner-height;
+  font-size: 1.2rem;
 
   &.shadow{
     @include banner-shadow(12px, 11px, #676767);

@@ -3,16 +3,17 @@ import {Link} from 'react-router'
 
 class navTab extends Component{
   render(){
-    let isActive = this.context.router.isActive(this.props.to, true),
-      activeClass = isActive ? this.props.activeLinkClass : "";
 
-    const classStyle = `${(this.props.className || '')} ${activeClass}`;
+    let isActive = this.context.router.isActive(this.props.to, true),
+        activeClass = isActive ? this.props.activeLinkClass : "";
+
+    const classNameProp = `${(this.props.className || '')} ${activeClass}`;
 
     const classNames = (
-      classStyle.indexOf('bg') > -1
-        ? classStyle
-        : 'bg-white '+ classStyle
-    );
+      classNameProp.indexOf('bg') > -1
+        ? classNameProp
+        : 'bg-white '+ classNameProp
+    ).trim();
 
     const style = { ...this.props.style,
       background: this.props.bgColor || '',

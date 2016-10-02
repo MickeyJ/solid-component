@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {BoxButton, Banner} from '../../src'
+import {Banner} from '../../build'
 
 const Main = (props) => (
   <div>
