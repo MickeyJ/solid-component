@@ -4,11 +4,11 @@ import {BoxButton, Banner, Form, TextInput} from '../../src'
 
 const Forms = (props) => (
   <div>
-    <h3>Form Components</h3>
+    <h2>Form Components</h2>
 
-    <Banner >
+    <Banner>
 
-      <h5>Login Form</h5>
+      <p>Signin Form</p>
 
       <Form
         style={{width: 350}}
@@ -18,8 +18,8 @@ const Forms = (props) => (
         }}>
 
         <TextInput
-          id="user-name"
-          label="Username"
+          id="user-email"
+          label="Email"
         />
 
         <TextInput
@@ -29,15 +29,15 @@ const Forms = (props) => (
         />
 
         <BoxButton
-          text="Submit"
+          text="Signin"
           type="submit"
         />
       </Form>
 
     </Banner>
 
-    <Banner className="bg-off-black">
-      <p>Dark Banner Component</p>
+    <Banner className="bg-off-black" shadow={false}>
+      <p>Signup In The Dark</p>
       <Form
         style={{width: 350}}
         handleSubmit={(e) =>{
@@ -47,7 +47,12 @@ const Forms = (props) => (
 
         <TextInput
           id="user-name"
-          label="Your Name"
+          label="Username"
+        />
+
+        <TextInput
+          id="user-email"
+          label="Email"
         />
 
         <TextInput
@@ -57,8 +62,8 @@ const Forms = (props) => (
         />
 
         <BoxButton
-          text="Submit"
-          className="bg-secondary"
+          text="Signup"
+          className="bg-primary"
           type="submit"
         />
       </Form>

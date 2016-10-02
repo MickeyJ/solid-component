@@ -26,7 +26,7 @@ class navTab extends Component{
         </Link>
     );
 
-    if(this.props.to) return (
+    else if(this.props.to) return (
       <Link to={this.props.to} className={`nav-tab hoverable ${classNames}`} style={style}>
         <div className="active-darken"></div>
         <div className="hover-lighten"></div>
