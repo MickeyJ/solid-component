@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Banner} from '../../build'
+import {Banner} from '../../src'
 
 const Main = (props) => (
   <div>

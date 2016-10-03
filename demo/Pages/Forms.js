@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {BoxButton, Banner, Form, TextInput} from '../../build'
+import {BoxButton, Banner, Form, TextInput} from '../../src'
 
 const Forms = (props) => (
   <div>
@@ -11,12 +11,9 @@ const Forms = (props) => (
       <p>Signin Form</p>
 
       <Form
-        style={{width: 350}}
-        handleSubmit={(e) =>{
-          e.preventDefault();
-          console.log('form 1 submitted');
-        }}>
-
+        style={{maxWidth: 350}}
+        handleSubmit={(e) => e.preventDefault()}
+      >
         <TextInput
           id="user-email"
           label="Email"
@@ -37,14 +34,13 @@ const Forms = (props) => (
     </Banner>
 
     <Banner className="bg-off-black" shadow={false}>
-      <p>Signup In The Dark</p>
-      <Form
-        style={{width: 350}}
-        handleSubmit={(e) =>{
-          e.preventDefault();
-          console.log('form 2 submitted');
-        }}>
 
+      <p>Signup In The Dark</p>
+
+      <Form
+        style={{maxWidth: 350}}
+        handleSubmit={(e) => e.preventDefault()}
+      >
         <TextInput
           id="user-name"
           label="Username"

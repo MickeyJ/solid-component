@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {NavBar, NavTab} from '../../build'
+import {NavBar, NavTab} from '../../src'
 
 const Layout = (props) => (
   <div>
