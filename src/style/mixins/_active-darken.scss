@@ -1,0 +1,21 @@
+@import 'transition';
+
+@mixin active-darken($color){
+  div.active-darken{
+    @include bezier(opacity 0.1s);
+    opacity: 0;
+    background: $color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &:active{
+    div.active-darken{
+      opacity: 1;
+    }
+  }
+}
