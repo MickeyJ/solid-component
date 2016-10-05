@@ -138,8 +138,10 @@
 
 .input-container {
   position: relative;
-  min-height: 50px;
+  min-height: 60px;
   margin: 10px 0 10px 0; }
+  .input-container:focus .input-label {
+    margin-bottom: 100% !important; }
 
 .text-input {
   margin: 0;
@@ -166,10 +168,18 @@
     border-color: #60bfb6; }
 
 .input-label {
+  -webkit-transition: all 0.15s cubic-bezier(0.625, 0.38, 0.44, 0.86);
+  -o-transition: all 0.15s cubic-bezier(0.625, 0.38, 0.44, 0.86);
+  transition: all 0.15s cubic-bezier(0.625, 0.38, 0.44, 0.86);
+  -webkit-transition-timing-function: cubic-bezier(0.625, 0.38, 0.44, 0.86);
+  -moz-transition-timing-function: cubic-bezier(0.625, 0.38, 0.44, 0.86);
+  -o-transition-timing-function: cubic-bezier(0.625, 0.38, 0.44, 0.86);
+  transition-timing-function: cubic-bezier(0.625, 0.38, 0.44, 0.86);
   position: absolute;
-  top: 0;
+  padding-top: 5px;
+  top: 50%;
   left: 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #909090; }
 
 .nav-tab {

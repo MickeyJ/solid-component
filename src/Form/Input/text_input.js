@@ -7,6 +7,7 @@ class textInput extends Component{
       labelTop: '50%',
       fontSize: '1rem'
     }
+
   }
 
   getInputRef(ref){
@@ -51,7 +52,7 @@ class textInput extends Component{
           id={this.props.id}
           className={`text-input ${classNames}`}
           type={this.props.type || "text"}
-          onFocus={(e) =>this.handleFocus(e)}
+          onFocus={(e) => this.handleFocus(e)}
           onBlur={(e)=> this.handleBlur(e)}
           ref={(ref) => this.getInputRef(ref)}
         />

@@ -33,36 +33,27 @@ const config = {
         query: {
           presets: ['es2015', 'react', 'stage-1']
         }
+      },
+      {
+        test: /\.scss/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.css/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader']
       }
     ]
   }
 };
 
 if(DEV){
-  config.module.loaders.push({
-      test: /\.scss/,
-      exclude: /node_modules/,
-      loaders: ['style-loader', 'css-loader', 'sass-loader']
-    },
-    {
-      test: /\.css/,
-      exclude: /node_modules/,
-      loaders: ['style-loader', 'css-loader']
-    });
   config.module.loaders[0].query.presets.push('react-hmre');
   config.plugins.push(
     new OpenBrowserPlugin({ url: `http://${host}:8080` })
   )
 } else {
-
-  config.module.loaders.push({ test: /\.scss$/, loader: 'ignore-loader' });
-  config.entry = './src';
-  config.output = {
-    library: 'solid-components',
-    libraryTarget: "umd",
-    path:'./test-build',
-    filename: 'index.js'
-  };
   config.plugins.push(
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({

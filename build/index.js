@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.NavTab = exports.NavBar = exports.TextInput = exports.Form = exports.BoxButton = exports.Banner = undefined;
 
+require('./style/main.scss');
+
 var _banner = require('./Banner/banner');
 
 var _banner2 = _interopRequireDefault(_banner);

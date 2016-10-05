@@ -16,9 +16,14 @@ var form = function form(props) {
 
   return _react2.default.createElement(
     'form',
-    { autoComplete: 'off', className: 'form-container ' + classNames, style: props.style || {}, onSubmit: function onSubmit(e) {
+    {
+      autoComplete: 'off',
+      className: 'form-container ' + classNames,
+      style: props.style || {},
+      onSubmit: function onSubmit(e) {
         return props.handleSubmit(e);
-      } },
+      }
+    },
     props.children
   );
 };

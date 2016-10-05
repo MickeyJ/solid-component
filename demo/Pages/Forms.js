@@ -2,6 +2,8 @@ import React from 'react'
 
 import {BoxButton, Banner, Form, TextInput} from '../../src'
 
+import FormRedux from '../Components/FormRedux'
+
 const Forms = (props) => (
   <div>
     <h2>Form Components</h2>
@@ -10,26 +12,7 @@ const Forms = (props) => (
 
       <p>Signin Form</p>
 
-      <Form
-        style={{maxWidth: 350}}
-        handleSubmit={(e) => e.preventDefault()}
-      >
-        <TextInput
-          id="user-email"
-          label="Email"
-        />
-
-        <TextInput
-          id="user-password"
-          label="Password"
-          type="password"
-        />
-
-        <BoxButton
-          text="Signin"
-          type="submit"
-        />
-      </Form>
+      <FormRedux />
 
     </Banner>
 
@@ -39,8 +22,7 @@ const Forms = (props) => (
 
       <Form
         style={{maxWidth: 350}}
-        handleSubmit={(e) => e.preventDefault()}
-      >
+        handleSubmit={(e) => e.preventDefault()}>
         <TextInput
           id="user-name"
           label="Username"
@@ -63,6 +45,7 @@ const Forms = (props) => (
           type="submit"
         />
       </Form>
+
     </Banner>
 
   </div>

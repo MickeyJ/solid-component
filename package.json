@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=development webpack-dev-server --inline --hot",
     "clean": "rm -rf lib",
     "build": "npm run clean && BABEL_ENV=production babel src -d build && node sass_build.js",
-    "test-build": "NODE_ENV=production webpack"
+    "demo-build": "NODE_ENV=production webpack"
   },
   "keywords": [],
   "author": "Mickey J. Malotte",
@@ -27,7 +27,12 @@
     "open-browser-webpack-plugin": "0.0.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
+    "redux": "^3.6.0",
+    "redux-form": "^6.0.5",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0",
     "sass-loader": "^4.0.2",
     "solid-components": "^0.0.1",
     "style-loader": "^0.13.1",
