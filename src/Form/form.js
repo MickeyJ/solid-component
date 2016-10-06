@@ -6,7 +6,6 @@ const form = (props) =>{
 
   return(
     <form
-      autoComplete="off"
       className={`form-container ${classNames}`}
       style={props.style || {}}
       onSubmit={(e) => props.handleSubmit(e)}

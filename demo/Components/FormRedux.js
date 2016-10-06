@@ -6,13 +6,18 @@ import {BoxButton, Banner, Form, TextInput} from '../../src'
 class FormRedux extends Component {
 
   handleFormSubmit(form){
-    console.log(form);
+
+    if(form.email && form.password){
+      alert(`
+        Email: ${form.email}\n
+        Password: ${form.password}
+      `)
+    }
+
   }
 
   render(){
-    const { handleSubmit, fields: {email, password} } = this.props;
-
-
+    const { handleSubmit } = this.props;
 
     return(
       <Form
@@ -20,23 +25,19 @@ class FormRedux extends Component {
         handleSubmit={handleSubmit(this.handleFormSubmit)}
       >
 
-        <Field name="email" component={(props) =>{
-          console.log(props);
+        <Field
+          name="email"
+          id="user-email"
+          label="Email"
+          component={TextInput}
+        />
 
-          return (
-            <TextInput
-              {...props}
-              id="user-email"
-              label="Email"
-            />
-          )
-        }}/>
-
-
-        <TextInput
+        <Field
+          name="password"
           id="user-password"
           label="Password"
           type="password"
+          component={TextInput}
         />
 
         <BoxButton

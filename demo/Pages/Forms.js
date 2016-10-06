@@ -3,6 +3,7 @@ import React from 'react'
 import {BoxButton, Banner, Form, TextInput} from '../../src'
 
 import FormRedux from '../Components/FormRedux'
+import FormCustom from '../Components/FormCustom'
 
 const Forms = (props) => (
   <div>
@@ -10,7 +11,7 @@ const Forms = (props) => (
 
     <Banner>
 
-      <p>Signin Form</p>
+      <p>Form With Redux</p>
 
       <FormRedux />
 
@@ -18,33 +19,9 @@ const Forms = (props) => (
 
     <Banner className="bg-off-black" shadow={false}>
 
-      <p>Signup In The Dark</p>
+      <p>Form Without Redux</p>
 
-      <Form
-        style={{maxWidth: 350}}
-        handleSubmit={(e) => e.preventDefault()}>
-        <TextInput
-          id="user-name"
-          label="Username"
-        />
-
-        <TextInput
-          id="user-email"
-          label="Email"
-        />
-
-        <TextInput
-          id="user-password"
-          label="Your Password"
-          type="password"
-        />
-
-        <BoxButton
-          text="Signup"
-          className="bg-primary"
-          type="submit"
-        />
-      </Form>
+      <FormCustom />
 
     </Banner>
 

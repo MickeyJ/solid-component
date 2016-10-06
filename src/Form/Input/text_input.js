@@ -1,20 +1,19 @@
 import React, {Component} from 'react'
 
-class textInput extends Component{
+export default class textInput extends Component{
   constructor(){
     super();
     this.state = {
       labelTop: '50%',
       fontSize: '1rem'
     }
-
   }
 
-  getInputRef(ref){
+  getInput(ref){
     this.input = ref
   }
 
-  handleFocus(e){
+  handleFocus(){
     if(!this.input.value){
       this.setState({
         labelTop: '0',
@@ -23,7 +22,7 @@ class textInput extends Component{
     }
   }
 
-  handleBlur(e){
+  handleBlur(){
     if(this.input.value){
       return this.setState({
         labelTop: '0',
@@ -37,6 +36,7 @@ class textInput extends Component{
   }
 
   render(){
+    const { input } = this.props;
     const classNames = this.props.className || '';
 
     return (
@@ -44,22 +44,36 @@ class textInput extends Component{
         <label
           className={`input-label`}
           htmlFor={this.props.id}
-          style={{top: this.state.labelTop, fontSize: this.state.fontSize}}
-        >
+          style={{top: this.state.labelTop, fontSize: this.state.fontSize}}>
           {this.props.label}
         </label>
-        <input
-          id={this.props.id}
-          className={`text-input ${classNames}`}
-          type={this.props.type || "text"}
-          onFocus={(e) => this.handleFocus(e)}
-          onBlur={(e)=> this.handleBlur(e)}
-          ref={(ref) => this.getInputRef(ref)}
-        />
+        {
+          input
+            ?(
+              <input
+                {...input}
+                id={this.props.id}
+                className={`text-input ${classNames}`}
+                type={this.props.type || "text"}
+                onFocus={() => this.handleFocus()}
+                onBlur={()=> this.handleBlur()}
+                onChange={() => input.onChange(this.input.value)}
+                ref={(ref) => this.getInput(ref)}
+              />
+            )
+            :(
+              <input
+                id={this.props.id}
+                className={`text-input ${classNames}`}
+                type={this.props.type || "text"}
+                onFocus={() => this.handleFocus()}
+                onBlur={()=> this.handleBlur()}
+                onChange={(e) => this.props.onChange(this.input.value, e)}
+                ref={(ref) => this.getInput(ref)}
+              />
+            )
+        }
       </div>
     )
   }
 }
-
-
-export default textInput

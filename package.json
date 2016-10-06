@@ -30,11 +30,10 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "redux": "^3.6.0",
-    "redux-form": "^6.0.5",
+    "redux-form": "~6.0.0-rc.5",
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0",
     "sass-loader": "^4.0.2",
-    "solid-components": "^0.0.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1"
