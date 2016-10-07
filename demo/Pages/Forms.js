@@ -1,9 +1,10 @@
 import React from 'react'
 
-import {BoxButton, Banner, Form, TextInput} from '../../src'
+import {Banner} from '../../src'
 
 import FormRedux from '../Components/FormRedux'
 import FormCustom from '../Components/FormCustom'
+import SelectForm from '../Components/SelectForm'
 
 const Forms = (props) => (
   <div>
@@ -22,6 +23,14 @@ const Forms = (props) => (
       <p>Form Without Redux</p>
 
       <FormCustom />
+
+    </Banner>
+
+    <Banner>
+
+      <p>Multi Select</p>
+
+      <SelectForm />
 
     </Banner>
 

@@ -50,7 +50,22 @@ class FormRedux extends Component {
   }
 }
 
+function validate(fields){
+  const errors = {};
+  const { email, password } = fields;
+
+  if(!email){
+    errors.email = 'Field Required*'
+  }
+  if(!password){
+    errors.password = 'Field Required*'
+  }
+
+  return errors
+}
+
 export default reduxForm({
+  validate,
   form: 'signin',
   fields: ['email', 'password'],
   initialValues: {

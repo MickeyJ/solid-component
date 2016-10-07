@@ -42,3 +42,11 @@
   font-size: 1rem;
   color: #909090;
 }
+
+.input-error{
+  position: absolute;
+  right: 0;
+  bottom: -25px;
+  font-size: 12px;
+  color: $sc-red;
+}

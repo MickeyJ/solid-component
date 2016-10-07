@@ -36,7 +36,7 @@ export default class textInput extends Component{
   }
 
   render(){
-    const { input } = this.props;
+    const { input, meta } = this.props;
     const classNames = this.props.className || '';
 
     return (
@@ -50,27 +50,33 @@ export default class textInput extends Component{
         {
           input
             ?(
-              <input
-                {...input}
-                id={this.props.id}
-                className={`text-input ${classNames}`}
-                type={this.props.type || "text"}
-                onFocus={() => this.handleFocus()}
-                onBlur={()=> this.handleBlur()}
-                onChange={() => input.onChange(this.input.value)}
-                ref={(ref) => this.getInput(ref)}
-              />
+              <div>
+                <input
+                  {...input}
+                  id={this.props.id}
+                  className={`text-input ${classNames}`}
+                  type={this.props.type || "text"}
+                  onFocus={() => this.handleFocus()}
+                  onBlur={()=> this.handleBlur()}
+                  onChange={(e) => input.onChange(e.target.value)}
+                  ref={(ref) => this.getInput(ref)}
+                />
+                {meta.touched && meta.error  && <p className="input-error">{meta.error}</p>}
+              </div>
             )
             :(
-              <input
-                id={this.props.id}
-                className={`text-input ${classNames}`}
-                type={this.props.type || "text"}
-                onFocus={() => this.handleFocus()}
-                onBlur={()=> this.handleBlur()}
-                onChange={(e) => this.props.onChange(this.input.value, e)}
-                ref={(ref) => this.getInput(ref)}
-              />
+              <div>
+                <input
+                  id={this.props.id}
+                  className={`text-input ${classNames}`}
+                  type={this.props.type || "text"}
+                  onFocus={() => this.handleFocus()}
+                  onBlur={()=> this.handleBlur()}
+                  onChange={(e) => this.props.onChange(this.input, e)}
+                  ref={(ref) => this.getInput(ref)}
+                />
+                {this.props.errorText ? <p className="input-error">{this.props.errorText}</p> : ''}
+              </div>
             )
         }
       </div>

@@ -5,6 +5,7 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 import { Provider } from 'react-redux';
 import store from './redux/store'
 
+// import '../build/main.css'
 import './demo.scss'
 
 import Layout from './Layout'

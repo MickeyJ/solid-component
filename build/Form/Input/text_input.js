@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -30,18 +32,17 @@ var textInput = function (_Component) {
       labelTop: '50%',
       fontSize: '1rem'
     };
-
     return _this;
   }
 
   _createClass(textInput, [{
-    key: 'getInputRef',
-    value: function getInputRef(ref) {
+    key: 'getInput',
+    value: function getInput(ref) {
       this.input = ref;
     }
   }, {
     key: 'handleFocus',
-    value: function handleFocus(e) {
+    value: function handleFocus() {
       if (!this.input.value) {
         this.setState({
           labelTop: '0',
@@ -51,7 +52,7 @@ var textInput = function (_Component) {
     }
   }, {
     key: 'handleBlur',
-    value: function handleBlur(e) {
+    value: function handleBlur() {
       if (this.input.value) {
         return this.setState({
           labelTop: '0',
@@ -68,6 +69,10 @@ var textInput = function (_Component) {
     value: function render() {
       var _this2 = this;
 
+      var _props = this.props;
+      var input = _props.input;
+      var meta = _props.meta;
+
       var classNames = this.props.className || '';
 
       return _react2.default.createElement(
@@ -78,24 +83,60 @@ var textInput = function (_Component) {
           {
             className: 'input-label',
             htmlFor: this.props.id,
-            style: { top: this.state.labelTop, fontSize: this.state.fontSize }
-          },
+            style: { top: this.state.labelTop, fontSize: this.state.fontSize } },
           this.props.label
         ),
-        _react2.default.createElement('input', {
-          id: this.props.id,
-          className: 'text-input ' + classNames,
-          type: this.props.type || "text",
-          onFocus: function onFocus(e) {
-            return _this2.handleFocus(e);
-          },
-          onBlur: function onBlur(e) {
-            return _this2.handleBlur(e);
-          },
-          ref: function ref(_ref) {
-            return _this2.getInputRef(_ref);
-          }
-        })
+        input ? _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement('input', _extends({}, input, {
+            id: this.props.id,
+            className: 'text-input ' + classNames,
+            type: this.props.type || "text",
+            onFocus: function onFocus() {
+              return _this2.handleFocus();
+            },
+            onBlur: function onBlur() {
+              return _this2.handleBlur();
+            },
+            onChange: function onChange(e) {
+              return input.onChange(e.target.value);
+            },
+            ref: function ref(_ref) {
+              return _this2.getInput(_ref);
+            }
+          })),
+          meta.touched && meta.error && _react2.default.createElement(
+            'p',
+            { className: 'input-error' },
+            meta.error
+          )
+        ) : _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement('input', {
+            id: this.props.id,
+            className: 'text-input ' + classNames,
+            type: this.props.type || "text",
+            onFocus: function onFocus() {
+              return _this2.handleFocus();
+            },
+            onBlur: function onBlur() {
+              return _this2.handleBlur();
+            },
+            onChange: function onChange(e) {
+              return _this2.props.onChange(_this2.input, e);
+            },
+            ref: function ref(_ref2) {
+              return _this2.getInput(_ref2);
+            }
+          }),
+          this.props.errorText ? _react2.default.createElement(
+            'p',
+            { className: 'input-error' },
+            this.props.errorText
+          ) : ''
+        )
       );
     }
   }]);

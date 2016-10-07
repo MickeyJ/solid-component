@@ -3,9 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.NavTab = exports.NavBar = exports.TextInput = exports.Form = exports.BoxButton = exports.Banner = undefined;
-
-require('./style/main.scss');
+exports.NavTab = exports.NavBar = exports.MultiSelect = exports.TextInput = exports.Form = exports.BoxButton = exports.Banner = undefined;
 
 var _banner = require('./Banner/banner');
 
@@ -23,6 +21,10 @@ var _text_input = require('./Form/Input/text_input');
 
 var _text_input2 = _interopRequireDefault(_text_input);
 
+var _multi_select = require('./Form/MultiSelect/multi_select');
+
+var _multi_select2 = _interopRequireDefault(_multi_select);
+
 var _nav_bar = require('./Navigation/NavBar/nav_bar');
 
 var _nav_bar2 = _interopRequireDefault(_nav_bar);
@@ -38,6 +40,11 @@ var BoxButton = exports.BoxButton = _box_button2.default;
 
 var Form = exports.Form = _form2.default;
 var TextInput = exports.TextInput = _text_input2.default;
+var MultiSelect = exports.MultiSelect = _multi_select2.default;
 
 var NavBar = exports.NavBar = _nav_bar2.default;
 var NavTab = exports.NavTab = _nav_tab2.default;
+
+if (!'build') {
+  require('./style/main.scss');
+}
