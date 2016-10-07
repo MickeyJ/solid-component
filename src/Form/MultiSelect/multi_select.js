@@ -47,7 +47,6 @@ class multiSelect extends Component {
 
   handleAddSelection(e){
     this.setState({
-      selectedOption: this.state.options.find(x => x.value === e.target.value),
       selections: [...this.state.selections,
         this.state.options.find(x => x.value === e.target.value)
       ],
